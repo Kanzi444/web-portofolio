@@ -1,6 +1,9 @@
-import './assets/main.css' // Sesuaikan jika nama file CSS Anda style.css
-
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router/index.js' // Arahkan secara spesifik ke index.js router
+import './assets/style.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(router)
+app.mount('#app')

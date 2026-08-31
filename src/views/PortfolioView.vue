@@ -1,288 +1,195 @@
 <template>
-  <div class="min-h-screen font-sans text-slate-100 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 flex flex-col justify-between selection:bg-amber-400 selection:text-slate-950">
+  <div class="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-black">
     
-    <!-- NAVBAR / HEADER -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 font-black flex items-center justify-center text-lg shadow-lg shadow-amber-400/20">
-            DP
-          </div>
-          <div>
-            <span class="font-bold text-base sm:text-lg tracking-wider text-white uppercase block">Kanzi Pratama</span>
-            <span class="text-[10px] text-amber-400 tracking-widest uppercase font-semibold">Frontend Developer</span>
-          </div>
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+      <router-link to="/admin" class="flex items-center gap-2 px-4 py-2 bg-slate-900/80 backdrop-blur-md border border-slate-800 text-slate-200 text-sm font-medium rounded-full shadow-lg hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300">
+        <span>🔒</span>
+        <span>Panel Admin</span>
+      </router-link>
+    </div>
+
+    <header class="max-w-5xl mx-auto px-6 pt-20 pb-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
+      <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 p-1 shadow-2xl shadow-cyan-500/20 shrink-0">
+        <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center text-4xl font-bold text-cyan-400">
+          KP
         </div>
-        <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold tracking-wider uppercase text-slate-300">
-          <a href="#tentang" class="hover:text-amber-400 transition-colors">Tentang</a>
-          <a href="#keahlian" class="hover:text-amber-400 transition-colors">Keahlian</a>
-          <a href="#proyek" class="hover:text-amber-400 transition-colors">Proyek</a>
-          <a href="#pencapaian" class="hover:text-amber-400 transition-colors">Pencapaian</a>
-          <a href="#kontak" class="hover:text-amber-400 transition-colors">Kontak</a>
-        </nav>
-        <div>
-          <a href="#kontak" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shadow-amber-400/10">
-            Hubungi Saya
-          </a>
+      </div>
+      <div>
+        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-cyan-400 uppercase bg-cyan-950/50 border border-cyan-800/50 rounded-full">
+          Frontend Developer & Tech Enthusiast
         </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+          Hai, Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Kanzi Pratama</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+          Membangun antarmuka web yang modern, interaktif, dan responsif menggunakan teknologi terkini seperti Vue.js dan Tailwind CSS.
+        </p>
       </div>
     </header>
 
-    <!-- KONTEN UTAMA -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-20 flex-grow w-full">
-      
-      <!-- HERO SECTION -->
-      <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-4 py-2 rounded-full text-xs font-semibold text-amber-400 backdrop-blur-sm">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Tersedia untuk Proyek & Kolaborasi
-          </div>
-          <h1 class="text-4xl sm:text-6xl font-serif font-black tracking-tight leading-tight text-white">
-            Membangun Pengalaman <span class="text-amber-400 underline decoration-amber-400/30">Digital</span> yang Elegan.
-          </h1>
-          <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            Halo! Saya seorang Frontend Developer yang berfokus pada pembuatan antarmuka web yang interaktif, bersih, dan responsif menggunakan Vue.js dan Tailwind CSS.
-          </p>
-          <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-            <a href="#proyek" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-6 py-3 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-amber-400/20">
-              Lihat Portofolio ➔
-            </a>
-            <a href="#tentang" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold px-6 py-3 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all">
-              Tentang Saya
-            </a>
-          </div>
-        </div>
+    <main class="max-w-5xl mx-auto px-6 space-y-20 pb-24">
 
-        <!-- Profil Card / Avatar Grid -->
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden space-y-6 backdrop-blur-md">
-            <div class="absolute -right-16 -top-16 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -left-16 -bottom-16 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="flex items-center gap-4 relative z-10">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-200 text-slate-950 font-black text-2xl flex items-center justify-center shadow-xl">
-                DP
-              </div>
-              <div>
-                <h3 class="font-bold text-lg text-white">Kanzi Pratama</h3>
-                <p class="text-xs text-amber-400 font-medium">Bandung, Jawa Barat</p>
-              </div>
-            </div>
+      <section class="bg-slate-900/40 border border-slate-800/80 p-8 rounded-2xl">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="w-2 h-8 bg-cyan-500 rounded-full"></span>
+          Tentang Saya
+        </h2>
+        <p class="text-slate-300 leading-relaxed text-base">
+            Halo semuanya ,perkenalkan nama saya adalah Kanzi Pratama Putra Mahendra dan biasa di panggil kanzi atau cibil , saya adalah seorang mahasiswa yang sedang menempuh pendidikan di sekolah SMK YADIKA SOREANG dengan jurusan Rekayasa Perangkat Lunak (RPL) , saya memiliki ketertarikan di bidang teknlogi terutama di bidang pengembangan web dan desain antarmuka pengguna. Saya senang belajar hal-hal baru, terutama yang berkaitan dengan pemrograman dan teknologi web. Selain itu, saya juga selalu mengikuti kegiatan di sekolah dan berusaha untuk mengembangkan keterampilan saya di bidang ini. Saya percaya bahwa dengan kerja keras dan dedikasi, saya dapat mencapai tujuan saya dalam dunia teknologi.
+        </p>
+      </section>
 
-            <div class="space-y-3 pt-2 border-t border-slate-800 relative z-10 text-xs text-slate-300">
-              <div class="flex justify-between py-1 border-b border-slate-800/50">
-                <span class="text-slate-400">Pengalaman</span>
-                <span class="font-bold text-white">3 Tahun</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-slate-800/50">
-                <span class="text-slate-400">Proyek Selesai</span>
-                <span class="font-bold text-white">6 Proyek</span>
-              </div>
-              <div class="flex justify-between py-1">
-                <span class="text-slate-400">Fokus Utama</span>
-                <span class="font-bold text-amber-400">Vue.js & Tailwind</span>
-              </div>
-            </div>
-
-            <div class="pt-2 relative z-10">
-              <div class="bg-slate-950/60 border border-slate-800 rounded-2xl p-4 text-center space-y-1">
-                <p class="text-[11px] text-slate-400 italic">“Kode yang bersih dan desain yang rapi adalah prioritas utama saya.”</p>
-              </div>
-            </div>
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+          <span class="w-2 h-8 bg-cyan-500 rounded-full"></span>
+          Keahlian & Teknologi
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <div v-for="(skill, index) in skills" :key="index" class="bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl text-center hover:border-cyan-500/50 transition-all duration-300 group">
+            <div class="text-2xl mb-2 group-hover:scale-110 transition-transform">{{ skill.icon }}</div>
+            <div class="font-medium text-slate-200 text-sm">{{ skill.name }}</div>
+            <div class="text-xs text-slate-500 mt-1">{{ skill.level }}</div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION TENTANG -->
-      <section id="tentang" class="space-y-8 pt-6">
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <h2 class="text-xs font-bold text-amber-400 tracking-widest uppercase">Latar Belakang</h2>
-          <h3 class="text-3xl sm:text-4xl font-serif font-black text-white uppercase tracking-tight">TENTANG SAYA</h3>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-3 backdrop-blur-md">
-            <div class="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-lg">🎨</div>
-            <h4 class="font-bold text-white uppercase text-sm tracking-wide">UI/UX Enthusiast</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Memperhatikan detail kecil tata letak, estetika warna, dan kenyamanan pengguna saat bernavigasi di web.</p>
-          </div>
-          <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-3 backdrop-blur-md">
-            <div class="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-lg">🚀</div>
-            <h4 class="font-bold text-white uppercase text-sm tracking-wide">Always Learning</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Selalu mengikuti perkembangan teknologi frontend terbaru seperti Vue 3 Composition API, Vite, dan Tailwind.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION KEAHLIAN (SKILLS) -->
-      <section id="keahlian" class="space-y-8 pt-6">
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <h2 class="text-xs font-bold text-amber-400 tracking-widest uppercase">Kompetensi</h2>
-          <h3 class="text-3xl sm:text-4xl font-serif font-black text-white uppercase tracking-tight">Keahlian & Teknologi</h3>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          <div v-for="skill in skills" :key="skill.name" class="bg-slate-900/90 border border-slate-800 hover:border-amber-400/50 transition-all rounded-2xl p-5 text-center space-y-2 shadow-lg group">
-            <div class="text-3xl group-hover:scale-110 transition-transform">{{ skill.icon }}</div>
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider">{{ skill.name }}</h4>
-            <span class="text-[10px] text-amber-400 font-semibold block">{{ skill.level }}</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION PROYEK -->
-      <section id="proyek" class="space-y-8 pt-6">
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <h2 class="text-xs font-bold text-amber-400 tracking-widest uppercase">Portofolio</h2>
-          <h3 class="text-3xl sm:text-4xl font-serif font-black text-white uppercase tracking-tight">Proyek Unggulan</h3>
-        </div>
-
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+          <span class="w-2 h-8 bg-blue-500 rounded-full"></span>
+          Proyek Pilihan
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div v-for="project in projects" :key="project.title" class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between space-y-6 backdrop-blur-md hover:border-slate-700 transition-all">
-            <div class="space-y-3">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold px-3 py-1 bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-full">{{ project.category }}</span>
+          <div v-for="(project, index) in projects" :key="index" class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-xs font-semibold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-900/50">{{ project.category }}</span>
                 <span class="text-xs text-slate-500">{{ project.year }}</span>
               </div>
-              <h4 class="text-lg font-bold text-white">{{ project.title }}</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">{{ project.desc }}</p>
+              <h3 class="text-lg font-bold text-white mb-2">{{ project.title }}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">{{ project.desc }}</p>
             </div>
-            
-            <div class="space-y-4 pt-4 border-t border-slate-800/80">
-              <div class="flex flex-wrap gap-1.5">
-                <span v-for="tag in project.tags" :key="tag" class="text-[10px] bg-slate-800 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-700/60 font-medium">
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span v-for="(tag, tIdx) in project.tags" :key="tIdx" class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">
                   {{ tag }}
                 </span>
               </div>
-              <a :href="project.link" target="_blank" class="block w-full text-center text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-500 py-2.5 rounded-xl transition-colors uppercase tracking-wider shadow-md">
-                Lihat Demo ➔
+              <a :href="project.link" class="inline-flex items-center gap-1 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
+                Lihat Detail &rarr;
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION PENCAPAIAN & UPLOAD FOTO -->
-      <section id="pencapaian" class="space-y-8 pt-6">
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <h2 class="text-xs font-bold text-amber-400 tracking-widest uppercase">Penghargaan & Sertifikat</h2>
-          <h3 class="text-3xl sm:text-4xl font-serif font-black text-white uppercase tracking-tight">Pencapaian Saya</h3>
+      <section>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <span class="w-2 h-8 bg-emerald-500 rounded-full"></span>
+            Pencapaian & Sertifikat
+          </h2>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <!-- Form Upload Foto Pencapaian -->
-          <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
-            <h4 class="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-3 flex items-center gap-2">
-              <span>🏆</span> Tambah Pencapaian Baru
-            </h4>
-            <div class="space-y-3">
-              <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Judul Penghargaan</label>
-                <input v-model="newAchievement.title" type="text" placeholder="Contoh: Juara 1 UI/UX Hackathon..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 transition-colors">
-              </div>
-              <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Tahun / Tanggal</label>
-                <input v-model="newAchievement.year" type="text" placeholder="Contoh: 2026" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 transition-colors">
-              </div>
-              <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Upload Foto / Sertifikat</label>
-                <input type="file" @change="handleImageUpload" accept="image/*" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-400 file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-amber-400 file:text-slate-950 hover:file:bg-amber-500 cursor-pointer">
-              </div>
-              <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Deskripsi Singkat</label>
-                <textarea v-model="newAchievement.desc" rows="2" placeholder="Ceritakan sedikit tentang penghargaan ini..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
-              </div>
-              <button @click="addAchievement" class="w-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-amber-400/10">
-                Unggah Pencapaian ➔
-              </button>
-            </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl mb-8">
+          <h3 class="text-md font-semibold text-slate-200 mb-4">Tambah Pencapaian Baru</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <input v-model="newAchievement.title" type="text" placeholder="Judul Penghargaan / Sertifikat" class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500">
+            <input v-model="newAchievement.year" type="text" placeholder="Tahun (Contoh: 2026)" class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500">
           </div>
-
-          <!-- Daftar Kartu Pencapaian / Galeri -->
-          <div class="lg:col-span-7 space-y-4">
-            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Galeri Penghargaan & Sertifikat</h4>
+          <div class="mb-4">
+            <textarea v-model="newAchievement.desc" rows="2" placeholder="Deskripsi singkat pencapaian..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500"></textarea>
+          </div>
+          <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <input ref="fileInputRef" type="file" @change="handleImageUpload" accept="image/*" class="text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-slate-800 file:text-cyan-400 hover:file:bg-slate-700 cursor-pointer">
             
-            <div v-if="achievements.length === 0" class="bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl p-8 text-center text-slate-500 text-xs">
-              Belum ada pencapaian yang diunggah. Silakan isi form di samping untuk menambahkan!
-            </div>
+            <button type="button" @click="openPasswordModal('upload')" class="w-full sm:w-auto px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm rounded-xl transition shadow-lg shadow-emerald-900/25 cursor-pointer">
+              Upload Pencapaian
+            </button>
+          </div>
+        </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div v-for="(item, index) in achievements" :key="index" class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between group">
-                <div>
-                  <div class="h-40 w-full bg-slate-950 overflow-hidden relative">
-                    <img :src="item.image" alt="Sertifikat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                    <span class="absolute top-2 right-2 bg-slate-950/80 backdrop-blur-sm text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-800">
-                      {{ item.year }}
-                    </span>
-                  </div>
-                  <div class="p-4 space-y-1.5">
-                    <h5 class="font-bold text-white text-sm">{{ item.title }}</h5>
-                    <p class="text-[11px] text-slate-400 leading-relaxed">{{ item.desc }}</p>
-                  </div>
-                </div>
-                <div class="p-4 pt-0">
-                  <button @click="removeAchievement(index)" class="w-full bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20 py-1.5 rounded-xl text-[10px] font-bold uppercase transition-colors">
-                    Hapus
-                  </button>
-                </div>
+        <div v-if="achievements.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div v-for="(item, index) in achievements" :key="index" class="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div v-if="item.image" class="h-48 overflow-hidden bg-slate-950 relative cursor-pointer" @click="openFullscreen(item.image, item.title)">
+              <img :src="item.image" alt="Sertifikat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-xs font-medium text-white gap-1.5">
+                🔍 Klik untuk memperbesar
               </div>
             </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs text-emerald-400 font-semibold">{{ item.year }}</span>
+                <button @click="openPasswordModal('delete', index)" class="text-xs text-rose-400 hover:text-rose-300 cursor-pointer">Hapus</button>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">{{ item.title }}</h4>
+              <p class="text-slate-400 text-sm">{{ item.desc }}</p>
+            </div>
           </div>
+        </div>
+        <div v-else class="text-center py-10 text-slate-500 text-sm border border-dashed border-slate-800 rounded-2xl">
+          Belum ada pencapaian yang diunggah. Silakan tambahkan melalui form di atas.
         </div>
       </section>
 
-      <!-- SECTION KONTAK -->
-      <section id="kontak" class="space-y-8 pt-6">
-        <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div class="space-y-4">
-            <h2 class="text-xs font-bold text-amber-400 tracking-widest uppercase">Mari Terhubung</h2>
-            <h3 class="text-3xl sm:text-4xl font-serif font-black text-white uppercase tracking-tight">Punya Proyek atau Pertanyaan?</h3>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Saya selalu terbuka untuk diskusi, tawaran kerja sama, maupun proyek freelance baru. Jangan ragu untuk mengirimkan pesan kepada saya!
-            </p>
-            <div class="space-y-2 pt-2 text-xs text-slate-300">
-              <p class="flex items-center gap-3">📧 <span class="font-semibold text-white">cibilkanzi5@gmail.com</span></p>
-              <p class="flex items-center gap-3">📱 <span class="font-semibold text-white">+62 821-2024-3273</span></p>
-              <p class="flex items-center gap-3">📍 <span class="font-semibold text-white">Bandung, Jawa Barat</span></p>
+      <section class="bg-gradient-to-b from-slate-900/80 to-slate-900/30 border border-slate-800 rounded-2xl p-8 md:p-12">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-white mb-3">Mari Terhubung</h2>
+          <p class="text-slate-400 text-sm mb-6">Punya pertanyaan atau ingin berkolaborasi? Kirim pesan langsung, dan pesan akan masuk ke inbox panel admin.</p>
+          
+          <form @submit.prevent="kirimPesanKeAdmin" class="space-y-4 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-medium text-slate-400 mb-1">Nama Anda</label>
+                <input v-model="formContact.name" type="text" placeholder="Masukkan nama..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-400 mb-1">Email Anda</label>
+                <input v-model="formContact.email" type="email" placeholder="nama@email.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+              </div>
             </div>
-          </div>
-
-          <!-- Form Kontak Sederhana -->
-          <div class="bg-slate-950/80 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-4 shadow-inner">
-            <h4 class="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-3">Kirim Pesan Langsung</h4>
-            <div class="space-y-3">
-              <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Nama Lengkap</label>
-                <input type="text" placeholder="Masukkan nama Anda..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 transition-colors">
-              </div>
-              <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Email Anda</label>
-                <input type="email" placeholder="nama@email.com..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 transition-colors">
-              </div>
-              <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Pesan</label>
-                <textarea rows="3" placeholder="Tuliskan pesan atau detail proyek..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
-              </div>
-              <button @click="submitPesan" class="w-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg shadow-amber-400/10">
-                Kirim Pesan Sekarang ➔
-              </button>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1">Pesan</label>
+              <textarea v-model="formContact.message" rows="4" placeholder="Tulis pesan Anda di sini..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition"></textarea>
             </div>
-          </div>
+            <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-semibold rounded-xl hover:opacity-90 transition cursor-pointer">
+              Kirim Pesan Sekarang
+            </button>
+          </form>
         </div>
       </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-800/80 bg-slate-950 py-6 text-center">
-      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
-        <p>&copy; 2026 Kanzi Cibil Pratama Putra Mahendra. All rights reserved.</p>
-        <div class="flex items-center space-x-4 font-semibold">
-          <a href="https://github.com/kanzi444" target="_blank" class="hover:text-amber-400 transition-colors">GitHub</a>
-          <a href="https://instagram.com/kancil.pratamaa" @click.prevent="openInstagram('kancil.pratamaa')" class="hover:text-amber-400 transition-colors cursor-pointer">Instagram</a>
+    <div v-if="showPasswordModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl w-full max-w-md shadow-2xl">
+        <h3 class="text-lg font-bold text-white mb-2">🔐 Verifikasi Pemilik Web</h3>
+        <p class="text-slate-400 text-sm mb-4">Masukkan password rahasia untuk melanjutkan tindakan ini.</p>
+        
+        <input v-model="inputPassword" type="password" placeholder="Masukkan password..." @keyup.enter="verifyPassword" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 mb-6">
+        
+        <div class="flex justify-end gap-3">
+          <button @click="showPasswordModal = false" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-xl transition cursor-pointer">
+            Batal
+          </button>
+          <button @click="verifyPassword" class="px-5 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-semibold rounded-xl transition cursor-pointer">
+            Konfirmasi
+          </button>
         </div>
       </div>
+    </div>
+
+    <div v-if="fullscreenImage" class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 backdrop-blur-md" @click="fullscreenImage = null">
+      <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center" @click.stop>
+        <button @click="fullscreenImage = null" class="absolute -top-12 right-0 text-white bg-slate-800/80 hover:bg-slate-700 px-4 py-2 rounded-full text-sm font-medium transition cursor-pointer">
+          ✕ Tutup
+        </button>
+        <img :src="fullscreenImage" alt="Fullscreen Preview" class="max-w-full max-h-[80vh] object-contain rounded-xl border border-slate-800 shadow-2xl">
+        <p v-if="fullscreenTitle" class="mt-4 text-white text-base font-semibold">{{ fullscreenTitle }}</p>
+      </div>
+    </div>
+
+    <footer class="border-t border-slate-900 py-8 text-center text-xs text-slate-500">
+      <p>&copy; 2026 Kanzi Pratama. Dibangun dengan Vue.js & Tailwind CSS.</p>
     </footer>
 
   </div>
@@ -322,7 +229,7 @@ export default {
           title: 'Landing Page UMKM Digital',
           category: 'E-Commerce',
           year: '2025',
-          desc: 'Halaman promosi produk lokal dengan galeri modern, katalog produk, dan tombol integrasi WhatsApp.',
+          desc: 'Halaman promosi produk lokal dengan galeri modern, katalog produk, dan tombol interaktif.',
           tags: ['Vue.js', 'Responsive Grid', 'UI/UX'],
           link: '#'
         }
@@ -333,7 +240,22 @@ export default {
         desc: '',
         image: ''
       },
-      achievements: [] // Dikosongkan agar saat web di-refresh, tampilannya bersih tanpa data bawaan
+      achievements: [],
+      formContact: {
+        name: '',
+        email: '',
+        message: ''
+      },
+      
+      // State untuk Modal Password
+      showPasswordModal: false,
+      inputPassword: '',
+      pendingAction: null,
+      targetIndex: null,
+
+      // State untuk Fullscreen Foto
+      fullscreenImage: null,
+      fullscreenTitle: ''
     }
   },
   methods: {
@@ -347,39 +269,84 @@ export default {
         reader.readAsDataURL(file);
       }
     },
-    addAchievement() {
-      if (!this.newAchievement.title || !this.newAchievement.image) {
-        alert('Mohon isi judul penghargaan dan unggah foto terlebih dahulu!');
+    openPasswordModal(action, index = null) {
+      this.pendingAction = action;
+      this.targetIndex = index;
+      this.inputPassword = '';
+      this.showPasswordModal = true;
+    },
+    verifyPassword() {
+      const SECRET_PASSWORD = "kanzipratama123";
+
+      if (this.inputPassword !== SECRET_PASSWORD) {
+        alert("Akses ditolak! Password salah.");
         return;
       }
+
+      this.showPasswordModal = false;
+
+      if (this.pendingAction === 'upload') {
+        this.executeUpload();
+      } else if (this.pendingAction === 'delete') {
+        this.executeDelete();
+      }
+    },
+    executeUpload() {
+      if (!this.newAchievement.title || !this.newAchievement.image) {
+        alert('Mohon isi judul penghargaan dan pilih file foto terlebih dahulu!');
+        return;
+      }
+      
       this.achievements.unshift({ ...this.newAchievement });
-      // Reset form
+      
       this.newAchievement.title = '';
       this.newAchievement.year = '';
       this.newAchievement.desc = '';
       this.newAchievement.image = '';
-      const fileInput = document.querySelector('input[type="file"]');
-      if (fileInput) fileInput.value = '';
+      if (this.$refs.fileInputRef) {
+        this.$refs.fileInputRef.value = '';
+      }
       
       alert('Pencapaian berhasil diunggah!');
     },
-    removeAchievement(index) {
-      this.achievements.splice(index, 1);
-    },
-    openInstagram(username) {
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      
-      if (isMobile) {
-        window.location.href = `instagram://user?username=${username}`;
-        setTimeout(() => {
-          window.open(`https://instagram.com/${username}`, '_blank');
-        }, 500);
-      } else {
-        window.open(`https://instagram.com/${username}`, '_blank');
+    executeDelete() {
+      if (this.targetIndex !== null) {
+        this.achievements.splice(this.targetIndex, 1);
+        alert('Pencapaian berhasil dihapus.');
       }
     },
-    submitPesan() {
-      alert('Terima kasih! Pesan Anda berhasil disimulasikan terkirim.');
+    openFullscreen(imageSrc, title) {
+      this.fullscreenImage = imageSrc;
+      this.fullscreenTitle = title;
+    },
+    kirimPesanKeAdmin() {
+      if (!this.formContact.name || !this.formContact.message) {
+        alert('Mohon isi nama dan pesan terlebih dahulu!');
+        return;
+      }
+
+      // Ambil daftar pesan lama dari localStorage (jika ada)
+      let inbox = JSON.parse(localStorage.getItem('adminInboxMessages')) || [];
+      
+      // Tambahkan pesan baru lengkap dengan tanggal/waktu pengiriman
+      const pesanBaru = {
+        name: this.formContact.name,
+        email: this.formContact.email || 'Tidak diisi',
+        message: this.formContact.message,
+        date: new Date().toLocaleString('id-ID')
+      };
+
+      inbox.unshift(pesanBaru);
+
+      // Simpan kembali ke localStorage agar bisa dibaca di Panel Admin
+      localStorage.setItem('adminInboxMessages', JSON.stringify(inbox));
+
+      alert(`Terima kasih, ${this.formContact.name}! Pesan Anda berhasil dikirim ke inbox panel admin.`);
+      
+      // Reset form
+      this.formContact.name = '';
+      this.formContact.email = '';
+      this.formContact.message = '';
     }
   }
 }
