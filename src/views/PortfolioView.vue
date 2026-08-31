@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-black">
     
+    <!-- Tombol Pintasan ke Halaman Admin -->
     <div class="fixed top-4 right-4 z-50 flex gap-2">
       <router-link to="/admin" class="flex items-center gap-2 px-4 py-2 bg-slate-900/80 backdrop-blur-md border border-slate-800 text-slate-200 text-sm font-medium rounded-full shadow-lg hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300">
         <span>🔒</span>
@@ -8,6 +9,7 @@
       </router-link>
     </div>
 
+    <!-- Header / Hero Section -->
     <header class="max-w-5xl mx-auto px-6 pt-20 pb-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
       <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 p-1 shadow-2xl shadow-cyan-500/20 shrink-0">
         <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center text-4xl font-bold text-cyan-400">
@@ -27,18 +29,21 @@
       </div>
     </header>
 
+    <!-- Main Content Container -->
     <main class="max-w-5xl mx-auto px-6 space-y-20 pb-24">
 
+      <!-- Section Tentang Saya / About Me -->
       <section class="bg-slate-900/40 border border-slate-800/80 p-8 rounded-2xl">
         <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
           <span class="w-2 h-8 bg-cyan-500 rounded-full"></span>
           Tentang Saya
         </h2>
         <p class="text-slate-300 leading-relaxed text-base">
-            Halo semuanya ,perkenalkan nama saya adalah Kanzi Pratama Putra Mahendra dan biasa di panggil kanzi atau cibil , saya adalah seorang mahasiswa yang sedang menempuh pendidikan di sekolah SMK YADIKA SOREANG dengan jurusan Rekayasa Perangkat Lunak (RPL) , saya memiliki ketertarikan di bidang teknlogi terutama di bidang pengembangan web dan desain antarmuka pengguna. Saya senang belajar hal-hal baru, terutama yang berkaitan dengan pemrograman dan teknologi web. Selain itu, saya juga selalu mengikuti kegiatan di sekolah dan berusaha untuk mengembangkan keterampilan saya di bidang ini. Saya percaya bahwa dengan kerja keras dan dedikasi, saya dapat mencapai tujuan saya dalam dunia teknologi.
+          Halo semuanya ,perkenalkan nama saya adalah Kanzi Pratama Putra Mahendra dan biasa di panggil kanzi atau cibil , saya adalah seorang mahasiswa yang sedang menempuh pendidikan di sekolah SMK YADIKA SOREANG dengan jurusan Rekayasa Perangkat Lunak (RPL) , saya memiliki ketertarikan di bidang teknlogi terutama di bidang pengembangan web dan desain antarmuka pengguna. Saya senang belajar hal-hal baru, terutama yang berkaitan dengan pemrograman dan teknologi web. Selain itu, saya juga selalu mengikuti kegiatan di sekolah dan berusaha untuk mengembangkan keterampilan saya di bidang ini. Saya percaya bahwa dengan kerja keras dan dedikasi, saya dapat mencapai tujuan saya dalam dunia teknologi.
         </p>
       </section>
 
+      <!-- Section Keahlian -->
       <section>
         <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
           <span class="w-2 h-8 bg-cyan-500 rounded-full"></span>
@@ -53,6 +58,7 @@
         </div>
       </section>
 
+      <!-- Section Proyek -->
       <section>
         <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
           <span class="w-2 h-8 bg-blue-500 rounded-full"></span>
@@ -82,6 +88,7 @@
         </div>
       </section>
 
+      <!-- Section Pencapaian & Upload Foto -->
       <section>
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <h2 class="text-2xl font-bold text-white flex items-center gap-3">
@@ -90,6 +97,7 @@
           </h2>
         </div>
 
+        <!-- Form Tambah Pencapaian -->
         <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl mb-8">
           <h3 class="text-md font-semibold text-slate-200 mb-4">Tambah Pencapaian Baru</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -108,6 +116,7 @@
           </div>
         </div>
 
+        <!-- Grid Tampilan Pencapaian -->
         <div v-if="achievements.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div v-for="(item, index) in achievements" :key="index" class="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
             <div v-if="item.image" class="h-48 overflow-hidden bg-slate-950 relative cursor-pointer" @click="openFullscreen(item.image, item.title)">
@@ -131,10 +140,11 @@
         </div>
       </section>
 
+      <!-- Section Kontak (Sinkron Cloud Database untuk Admin) -->
       <section class="bg-gradient-to-b from-slate-900/80 to-slate-900/30 border border-slate-800 rounded-2xl p-8 md:p-12">
         <div class="max-w-2xl mx-auto text-center">
           <h2 class="text-2xl font-bold text-white mb-3">Mari Terhubung</h2>
-          <p class="text-slate-400 text-sm mb-6">Punya pertanyaan atau ingin berkolaborasi? Kirim pesan langsung, dan pesan akan masuk ke inbox panel admin.</p>
+          <p class="text-slate-400 text-sm mb-6">Punya pertanyaan atau ingin berkolaborasi? Kirim pesan, dan pesan akan langsung masuk ke inbox panel admin.</p>
           
           <form @submit.prevent="kirimPesanKeAdmin" class="space-y-4 text-left">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -151,8 +161,8 @@
               <label class="block text-xs font-medium text-slate-400 mb-1">Pesan</label>
               <textarea v-model="formContact.message" rows="4" placeholder="Tulis pesan Anda di sini..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition"></textarea>
             </div>
-            <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-semibold rounded-xl hover:opacity-90 transition cursor-pointer">
-              Kirim Pesan Sekarang
+            <button type="submit" :disabled="isSubmitting" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-semibold rounded-xl hover:opacity-90 transition cursor-pointer disabled:opacity-50">
+              {{ isSubmitting ? 'Mengirim Pesan...' : 'Kirim Pesan Sekarang' }}
             </button>
           </form>
         </div>
@@ -160,6 +170,7 @@
 
     </main>
 
+    <!-- MODAL POP-UP PASSWORD KUSTOM -->
     <div v-if="showPasswordModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
       <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl w-full max-w-md shadow-2xl">
         <h3 class="text-lg font-bold text-white mb-2">🔐 Verifikasi Pemilik Web</h3>
@@ -178,6 +189,7 @@
       </div>
     </div>
 
+    <!-- MODAL FULL SCREEN FOTO -->
     <div v-if="fullscreenImage" class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 backdrop-blur-md" @click="fullscreenImage = null">
       <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center" @click.stop>
         <button @click="fullscreenImage = null" class="absolute -top-12 right-0 text-white bg-slate-800/80 hover:bg-slate-700 px-4 py-2 rounded-full text-sm font-medium transition cursor-pointer">
@@ -188,6 +200,7 @@
       </div>
     </div>
 
+    <!-- Footer -->
     <footer class="border-t border-slate-900 py-8 text-center text-xs text-slate-500">
       <p>&copy; 2026 Kanzi Pratama. Dibangun dengan Vue.js & Tailwind CSS.</p>
     </footer>
@@ -246,6 +259,7 @@ export default {
         email: '',
         message: ''
       },
+      isSubmitting: false,
       
       // State untuk Modal Password
       showPasswordModal: false,
@@ -319,16 +333,14 @@ export default {
       this.fullscreenImage = imageSrc;
       this.fullscreenTitle = title;
     },
-    kirimPesanKeAdmin() {
+    async kirimPesanKeAdmin() {
       if (!this.formContact.name || !this.formContact.message) {
         alert('Mohon isi nama dan pesan terlebih dahulu!');
         return;
       }
 
-      // Ambil daftar pesan lama dari localStorage (jika ada)
-      let inbox = JSON.parse(localStorage.getItem('adminInboxMessages')) || [];
-      
-      // Tambahkan pesan baru lengkap dengan tanggal/waktu pengiriman
+      this.isSubmitting = true;
+
       const pesanBaru = {
         name: this.formContact.name,
         email: this.formContact.email || 'Tidak diisi',
@@ -336,17 +348,35 @@ export default {
         date: new Date().toLocaleString('id-ID')
       };
 
-      inbox.unshift(pesanBaru);
+      try {
+        // Menggunakan MockAPI publik gratis agar pesan tersinkron online antar perangkat (HP & Laptop)
+        const response = await fetch('https://65a083f86017290bbc78db34.mockapi.io/api/v1/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(pesanBaru)
+        });
 
-      // Simpan kembali ke localStorage agar bisa dibaca di Panel Admin
-      localStorage.setItem('adminInboxMessages', JSON.stringify(inbox));
-
-      alert(`Terima kasih, ${this.formContact.name}! Pesan Anda berhasil dikirim ke inbox panel admin.`);
-      
-      // Reset form
-      this.formContact.name = '';
-      this.formContact.email = '';
-      this.formContact.message = '';
+        if (response.ok) {
+          alert(`Terima kasih, ${this.formContact.name}! Pesan Anda berhasil dikirim ke inbox panel admin.`);
+          this.formContact.name = '';
+          this.formContact.email = '';
+          this.formContact.message = '';
+        } else {
+          throw new Error('Gagal mengirim');
+        }
+      } catch (error) {
+        // Fallback cadangan ke localStorage jika jaringan bermasalah
+        let inbox = JSON.parse(localStorage.getItem('adminInboxMessages')) || [];
+        inbox.unshift(pesanBaru);
+        localStorage.setItem('adminInboxMessages', JSON.stringify(inbox));
+        
+        alert(`Terima kasih, ${this.formContact.name}! Pesan berhasil disimpan.`);
+        this.formContact.name = '';
+        this.formContact.email = '';
+        this.formContact.message = '';
+      } finally {
+        this.isSubmitting = false;
+      }
     }
   }
 }
